@@ -1,0 +1,39 @@
+{
+  "mode": "sender",
+  "sender": {
+    "jar_keyword": "agentMini",
+    "log_dir": "",
+    "log_file_pattern": "info-*.log",
+    "log_keyword": "wx agentMini js_ticket",
+    "probe_host": "127.0.0.1",
+    "probe_port": 8383,
+    "targets": [
+      {
+        "ip": "127.0.0.1",
+        "port": 17777,
+        "enabled": true
+      }
+    ],
+    "message": "【{host}】{app} 已启动 {time}",
+    "timeout_message": "【{host}】{app} 启动超时（{timeout} 秒）{time}",
+    "down_message": "【{host}】{app} 已掉线 {time}",
+    "restart_message": "【{host}】{app} 已重启 {time}",
+    "timeout_seconds": 300,
+    "notify_on_timeout": true,
+    "notify_on_down": true,
+    "notify_on_restart": true,
+    "probe_interval": 3.0,
+    "log_check_interval": 10.0,
+    "send_retries": 3,
+    "retry_interval_ms": 300
+  },
+  "listener": {
+    "bind_ip": "auto",
+    "port": 17777,
+    "history_size": 100
+  },
+  "custom_messages": [
+    "服务重启中",
+    "例行测试中"
+  ]
+}
